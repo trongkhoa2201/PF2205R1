@@ -11,11 +11,15 @@
 </html>
 <script>
         let number = prompt("Nhập số :")
-        if (number == 1){
+        if (1 <= number <= 12){
+            if (number == 1 || number == 3 || number == 5 || number == 7 || number == 10 || number == 12){
             alert("31 ngày")
-        }else if (number == 2){
-            alert("28 hoặc 29 ngày")
-        }else if(number == 3){
-            alert("30 ngày")
+            }else if (number == 2){
+                alert("28 hoặc 29 ngày")
+            }else if(number == 4 || number == 6  || number == 9  || number == 11){
+                alert("30 ngày")
+            }else{
+            alert("nhập lại")
+            }
         }
 </script>
