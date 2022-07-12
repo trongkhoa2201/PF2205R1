@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    let element_arr = prompt("Enter array element : ");
+    let arr = [];
+
+    while (element_arr != "q"){
+        arr.push(element_arr);
+        element_arr = prompt("Enter array element : ");
+    }
+
+    let element_check = prompt("Enter element check : ");
+    let flag = false;
+    for (let j = 0; j <= arr.length-1; j++){
+            if (element_check == arr[j]) {
+                flag = true
+            }
+        }
+        if (flag){
+            alert(" Element_check exist in array");
+        } else {
+            alert(" Element_check does not exist in array");
+        }
+</script>
