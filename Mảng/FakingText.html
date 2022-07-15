@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body onload="fake()">
+    <h2>Type something</h2>
+    <form name="box">
+        <textarea cols="30" rows="10" id="txt" onkeydown="typeTextarea();"></textarea>
+    </form>
+</body>
+</html>
+<script>
+    let array = [];
+    let str = "";
+    array[1] = 'W';
+    array[2] = 'E';
+    array[3] = 'L';
+    array[4] = 'C';
+    array[5] = 'O';
+    array[6] = 'M';
+    array[7] = 'E';
+    array[8] = ' ';
+    array[9] = 'T';
+    array[10] = 'O';
+    array[11] = ' ';
+    array[12] = 'F';
+    array[13] = 'A';
+    array[14] = 'K';
+    array[15] = 'I';
+    array[16] = 'N';
+    array[17] = 'G';
+    array[18] = ' ';
+    array[19] = 'T';
+    array[20] = 'E';
+    array[21] = 'X';
+    array[22] = 'T';
+    array[23] = '^';
+    array[24] = '^';
+
+    function fake(){
+        let text = document.getElementById("txt").value;
+        let j = text.length;
+        if (j > 0) {
+                for(let i = 1; i <= j; i++)
+                {
+                    str = str + array[i];
+                    if (i === 24) {
+                        document.getElementById("txt").value= "";
+                        str = "";
+                                    }
+                }
+            }
+                document.getElementById("txt").value = str;
+                str = "";
+                setTimeout("fake()", 1);
+            }
+</script>
