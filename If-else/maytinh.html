@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .maytinh {
+        width: 400px;
+        border: 5px solid black;
+        padding: 5px;
+        margin: auto;
+    }
+
+    .maytinh input {
+        width: 95%;
+        margin: auto;
+        display: block;
+        text-align: right;
+    }
+
+    .input {
+        display: flex;
+        gap: 10px;
+        padding: 10px;
+        flex-wrap: wrap;
+    }
+
+    .input button {
+        flex: 20%;
+    }
+    </style>
+</head>
+<body>
+    <div class="maytinh">
+        <input type="text" name="" id="result">
+        <div class="input">
+            <button value="1" onclick="hienthi1()">1</button>
+            <button value="2" onclick="hienthi2()">2</button>
+            <button value="3" onclick="hienthi3()">3</button>
+            <button value="+" onclick="Sum()">+</button>
+
+            <button value="4" onclick="hienthi4()">4</button>
+            <button value="5" onclick="hienthi5()">5</button>
+            <button value="6" onclick="hienthi6()">6</button>
+            <button value="-" onclick="Sub()">-</button>
+
+            <button value="7" onclick="hienthi7()">7</button>
+            <button value="8" onclick="hienthi8()">8</button>
+            <button value="9" onclick="hienthi9()">9</button>
+            <button value="*" onclick="Mul()">x</button>
+
+            <button value="0" onclick="hienthi0()">0</button>
+            <button value="=" onclick="ketqua()">=</button>
+            <button value="/" onclick="Div()">/</button>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+     function hienthi0() {
+                result.value += 0;
+            }
+
+            function hienthi1() {
+                result.value += 1;
+            }
+
+            function hienthi2() {
+                result.value += 2;
+            }
+
+            function hienthi3() {
+                result.value += 3;
+            }
+
+            function hienthi4() {
+                result.value += 4;
+            }
+
+            function hienthi5() {
+                result.value += 5;
+            }
+
+            function hienthi6() {
+                result.value += 6;
+            }
+
+            function hienthi7() {
+                result.value += 7;
+            }
+
+            function hienthi8() {
+                result.value += 8;
+            }
+
+            function hienthi9() {
+                result.value += 9;
+            }
+            function Sum() {
+                result.value += "+";
+            }
+
+            function Sub() {
+                result.value += "-";
+            }
+
+            function Mul() {
+                result.value += "*";
+            }
+
+            function Div() {
+                result.value += "/";
+            }
+             function ketqua() {
+
+                let toan_tu_cong = result.value.indexOf("+");
+                let toan_tu_tru = result.value.indexOf("-");
+                let toan_tu_nhan = result.value.indexOf("*");
+                let toan_tu_chia = result.value.indexOf("/");
+
+                let toantucong1 = parseInt(result.value.slice(0,toan_tu_cong));
+                let toantucong2 = parseInt(result.value.slice(toan_tu_cong + 1,));
+               
+
+                let toantutru1 = parseInt(result.value.slice(0,toan_tu_tru));
+                let toantutru2 = parseInt(result.value.slice(toan_tu_tru + 1,));
+                
+
+                let toantunhan1 = parseInt(result.value.slice(0,toan_tu_nhan));
+                let toantunhan2 = parseInt(result.value.slice(toan_tu_nhan + 1,));
+
+
+                let toantuchia1 = parseInt(result.value.slice(0,toan_tu_chia));
+                let toantuchia2 = parseInt(result.value.slice(toan_tu_chia + 1,));
+
+
+                if (toan_tu_cong != -1) {
+                    result.value = toantucong1 + toantucong2;
+                } else if (toan_tu_tru != -1) {
+                    result.value = toantutru1 - toantutru2;
+                } else if (toan_tu_nhan != -1) {
+                    result.value = toantunhan1 * toantunhan2;
+                } else if (toan_tu_chia != -1) {
+                    result.value = toantuchia1 /toantuchia2;
+                }
+            }
+</script>
