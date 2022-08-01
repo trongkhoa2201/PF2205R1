@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="myCanvas" width="500px" height="500px" style="border: 1px solid"></canvas>
+</body>
+</html>
+<script>
+    class Circle {
+        constructor(radius, color){
+            this.radius = radius;
+            this.color = color;
+        }
+        getRadius(){
+            return this.radius;
+        }
+        getArea(){
+            return Math.PI * this.radius * this.radius;
+        }
+
+    }
+    let circle = new Circle(100,"Blue");
+    let radius = circle.getRadius();
+    let area = circle.getArea();
+
+    document.write("radius: " + radius + "; area: " + area.toFixed(2));
+    let canvas = document.getElementById("myCanvas");
+    let cxt = canvas.getContext("2d");
+    cxt.beginPath();
+    cxt.arc(100,100,circle.getRadius(), 0 , 2 * Math.PI );
+    cxt.stroke();
+</script>
