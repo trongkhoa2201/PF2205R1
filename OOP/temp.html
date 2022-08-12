@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  </head>
+  <body>    
+      <p>Nhập độ C 
+        <input type="number" id="inputC" placeholder="Enter C Temp" style="text-align:center; font-size:16px;font-weight:bold;color:blue;">
+      </p>
+      <button onclick="display();">Chuyển đổi</button>
+      <button onclick="clearAll();">Reset All</button>
+      <p>Kết quả <br>
+      <span id="resultK"></span><br>
+      <span id="resultF"></span>
+      </p>
+      
+    </fieldset> 
+   
+
+    <script>
+      class Temperature {
+          constructor (tempC) {
+            this.tempC = tempC;
+          }
+
+          getTemC() {
+            return this.tempC;
+          }
+
+          exchangeToTempK() {
+            return this.tempC + 273.15;
+          }
+
+          exchangeToTempF() {
+            return ((this.tempC * 1.8) + 32);
+          }
+
+      }
+
+      function display() {
+      let input_temp = +document.getElementById("inputC").value;
+      let tempC = new Temperature(input_temp);
+      
+      let TempC = tempC.getTemC();
+      let TempK = tempC.exchangeToTempK();
+      let TempF = tempC.exchangeToTempF();
+
+      if (TempC < -273) {
+        alert("Nhiệt độ C không được nhỏ hơn -273 độ.Bạn nhập lại thông số đầu vào nhé.");
+
+      } else {
+        document.getElementById("resultK").innerHTML = "Độ K chuyển đổi từ " + TempC + " độ C =  " + TempK;
+        document.getElementById("resultF").innerHTML = "Độ F chuyển đổi từ " + TempC + " độ C =  " + TempF;
+
+      }
+      
+      
+      
+      }
+
+      function clearAll() {
+        document.getElementById("inputC").value = ''
+        document.getElementById("resultK").innerHTML = '';
+        document.getElementById("resultF").innerHTML = '';
+
+      }
+
+    </script>
+
+  </body>
+</html>
